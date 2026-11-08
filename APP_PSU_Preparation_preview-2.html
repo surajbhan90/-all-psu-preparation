@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APP | All PSU Preparation</title>
+<style>
+:root{--bg:#071326;--panel:#101f38;--panel2:#142846;--blue:#318bff;--cyan:#38d6e8;--text:#f4f8ff;--muted:#9eb0ca;--line:#263b59}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#15345c 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#08172beF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);padding:13px 5%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.4px}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#061426;font-weight:950}
+nav{display:flex;gap:8px;flex-wrap:wrap}button{border:0;cursor:pointer;font:inherit}.navbtn,.outline{color:#dceaff;background:transparent;padding:9px 13px;border:1px solid transparent;border-radius:10px}.navbtn:hover,.navbtn.active{background:#193353;border-color:#2c527d}.primary{background:linear-gradient(110deg,#318bff,#31c7e1);color:#061426;font-weight:800;padding:11px 17px;border-radius:11px}
+main{max-width:1120px;margin:auto;padding:34px 5% 70px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+.hero{padding:30px 0 26px;display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:center}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:12px 0}.hero h1 span{background:linear-gradient(90deg,#54a4ff,#52e1e7);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:590px}.hero-card{background:linear-gradient(145deg,#17365d,#10213a);border:1px solid #31527b;border-radius:22px;padding:23px;box-shadow:0 20px 50px #0004}.hero-card strong{font-size:34px;display:block}.hero-card small{color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 15px}.section-head h2{margin:0;font-size:22px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:linear-gradient(150deg,#132641,#0e1d33);border:1px solid var(--line);border-radius:17px;padding:17px;min-height:130px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#438bd0}.exam{display:flex;align-items:center;justify-content:space-between}.exam b{font-size:19px}.tag{font-size:11px;color:#8ce7f0;background:#153d50;padding:4px 8px;border-radius:20px}.card p{margin:8px 0 0;color:var(--muted);font-size:13px}
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.subject{cursor:pointer;text-align:left;color:var(--text);width:100%}.subject .symbol{font-size:22px}.subject b{display:block;margin-top:9px}.subject small{color:var(--muted)}
+.panel{margin-top:26px;background:#0e1d33;border:1px solid var(--line);border-radius:18px;padding:20px}.panel h3{margin:0 0 8px}.muted{color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.outline{border-color:#345273}.outline:hover{background:#183454}
+#detail{display:none;margin-top:18px}.topic{padding:11px 0;border-bottom:1px solid var(--line);color:#dceaff}.topic:last-child{border:0}
+footer{border-top:1px solid var(--line);padding:22px 5%;color:var(--muted);text-align:center;font-size:12px}
+@media(max-width:760px){header{padding:11px 4%;align-items:flex-start;gap:10px;flex-direction:column}nav{width:100%}.hero{grid-template-columns:1fr;padding-top:22px}.grid{grid-template-columns:repeat(2,1fr)}.subjects{grid-template-columns:repeat(2,1fr)}main{padding-top:20px}}
+@media(max-width:420px){.subjects{grid-template-columns:1fr 1fr}.card{padding:13px}.hero-card{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">A</div><div>APP <span style="color:#69dce9">/</span> <span style="font-size:11px;color:#9eb0ca">ALL PSU PREPARATION</span></div></div>
+<nav><button class="navbtn active" onclick="go('home',this)">Home</button><button class="navbtn" onclick="go('exams',this)">Exams</button><button class="navbtn" onclick="go('subjects',this)">Subjects</button><button class="navbtn" onclick="go('tests',this)">Mock Tests</button><button class="navbtn" onclick="go('login',this)">Login</button></nav></header>
+<main id="home">
+<section class="hero"><div><div class="eyebrow">Your PSU journey starts here</div><h1>Prepare Smarter.<br><span>Achieve Your PSU Dream.</span></h1><p>One focused platform for PSU exam preparation — syllabus, study material, practice questions and mock tests.</p><div class="actions"><button class="primary" onclick="go('exams')">Explore Exams ↗</button><button class="outline" onclick="go('subjects')">Explore Subjects</button></div></div>
+<div class="hero-card"><div class="eyebrow">Your preparation hub</div><strong>Learn. Practice. Improve.</strong><small>Build your confidence one topic at a time.</small><div style="height:8px;background:#263d5a;border-radius:9px;margin-top:22px"><div style="width:28%;height:8px;border-radius:9px;background:linear-gradient(90deg,#318bff,#38d6e8)"></div></div><small>Demo dashboard preview</small></div></section>
+<section id="exams"><div class="section-head"><div><h2>Popular PSU Exams</h2><p>Start with your target organisation</p></div></div><div class="grid">
+<div class="card"><div class="exam"><b>BPCL</b><span class="tag">PSU</span></div><p>Bharat Petroleum</p></div><div class="card"><div class="exam"><b>IOCL</b><span class="tag">PSU</span></div><p>Indian Oil Corporation</p></div><div class="card"><div class="exam"><b>HPCL</b><span class="tag">PSU</span></div><p>Hindustan Petroleum</p></div><div class="card"><div class="exam"><b>GAIL</b><span class="tag">PSU</span></div><p>Gas Authority of India</p></div></div></section>
+<section id="subjects"><div class="section-head"><div><h2>Explore Subjects</h2><p>Choose a subject to view demo topics</p></div></div><div class="subjects" id="subjectGrid"></div><div id="detail" class="panel"><h3 id="detailTitle"></h3><div id="topicList"></div></div></section>
+<section id="tests" class="panel"><h3>Mock Test Zone</h3><p class="muted">Practice in exam-style format and review your performance.</p><div class="actions"><button class="primary" onclick="alert('Mock test engine will be connected in the next development phase.')">Explore Mock Tests</button><button class="outline" onclick="alert('Your performance dashboard will appear here.')">Performance Dashboard</button></div></section>
+<section id="login" class="panel"><h3>Student Login</h3><p class="muted">A clean, secure student sign-in experience.</p><div class="actions"><button class="primary" onclick="alert('Login will be connected to Supabase next.')">Student Login</button><button class="outline" onclick="alert('Registration will be connected to Supabase next.')">Create Account</button></div></section>
+</main><footer>APP — ALL PSU PREPARATION · Frontend concept preview · Not connected to live accounts or tests yet</footer>
+<script>
+const data=[
+['Material & Energy Balance','Basic calculations','Material balance','Energy balance'],
+['Chemical Engineering Thermodynamics','Properties','First law','Second law'],
+['Fluid Mechanics','Fluid properties','Fluid statics','Bernoulli equation','Flow through pipes'],
+['Heat Transfer','Conduction','Convection','Radiation','Heat exchangers'],
+['Mass Transfer','Diffusion','Distillation','Absorption','Extraction'],
+['Chemical Reaction Engineering','Reaction kinetics','Reactor design','Ideal reactors'],
+['Process Control & Instrumentation','Measurement','Controllers','Control loops'],
+['Chemical Process Calculations','Stoichiometry','Gas laws','Combustion'],
+['Unit Operations & Unit Processes','Mechanical operations','Chemical processes'],
+['Petroleum Refining & Petrochemicals','Crude oil processing','Refinery processes'],
+['Process Equipment','Pumps','Compressors','Heat exchangers'],
+['Industrial Safety & Environmental Engineering','Process safety','Hazard studies','Pollution control'],
+['Quantitative Aptitude','Percentages','Time & Work','Time & Distance'],
+['Reasoning','Series','Analogy','Logical reasoning'],
+['English','Grammar','Vocabulary','Comprehension'],
+['General Awareness','Current affairs','General knowledge','Science']
+];
+const icons=['⚖️','🌡️','💧','♨️','🧪','⚗️','🎛️','📐','⚙️','🛢️','🏭','🦺','➗','🧠','📘','🌐'];
+const grid=document.getElementById('subjectGrid');
+data.forEach((s,i)=>{let b=document.createElement('button');b.className='card subject';b.innerHTML=`<span class="symbol">${icons[i]}</span><b>${s[0]}</b><small>${s.length-1} demo topics</small>`;b.onclick=()=>{document.getElementById('detail').style.display='block';document.getElementById('detailTitle').textContent=s[0];document.getElementById('topicList').innerHTML=s.slice(1).map(t=>`<div class="topic">› ${t}</div>`).join('');document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'})};grid.appendChild(b)});
+function go(id,btn){if(id==='home'){window.scrollTo({top:0,behavior:'smooth'})}else{document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}document.querySelectorAll('.navbtn').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active')}
+</script></body></html>
