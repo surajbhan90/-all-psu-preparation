@@ -56,4 +56,35 @@ const icons=['⚖️','🌡️','💧','♨️','🧪','⚗️','🎛️','📐'
 const grid=document.getElementById('subjectGrid');
 data.forEach((s,i)=>{let b=document.createElement('button');b.className='card subject';b.innerHTML=`<span class="symbol">${icons[i]}</span><b>${s[0]}</b><small>${s.length-1} demo topics</small>`;b.onclick=()=>{document.getElementById('detail').style.display='block';document.getElementById('detailTitle').textContent=s[0];document.getElementById('topicList').innerHTML=s.slice(1).map(t=>`<div class="topic">› ${t}</div>`).join('');document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'})};grid.appendChild(b)});
 function go(id,btn){if(id==='home'){window.scrollTo({top:0,behavior:'smooth'})}else{document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}document.querySelectorAll('.navbtn').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active')}
-</script></body></html>
+</script>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabase = createClient(
+  'https://byusopvwolljxiyjrthz.supabase.co',
+  'sb_publishable_wyd4sVf16yIjgBoywibQTw_G5ZiVU1e'
+);
+
+const loginButtons = document.querySelectorAll('#login .actions button');
+
+loginButtons[0].onclick = async () => {
+  const email = prompt('Enter your email');
+  const password = prompt('Enter your password');
+  if (!email || !password) return;
+
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  alert(error ? error.message : 'Login successful!');
+};
+
+loginButtons[1].onclick = async () => {
+  const email = prompt('Enter your email');
+  const password = prompt('Create a password');
+  if (!email || !password) return;
+
+  const { error } = await supabase.auth.signUp({ email, password });
+  alert(error ? error.message : 'Signup submitted! Check your email.');
+};
+</script>
+</body>
+</html>
